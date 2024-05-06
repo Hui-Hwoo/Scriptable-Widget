@@ -4,7 +4,7 @@ const user = "evan";
 // API PARAMETERS !important
 // WEATHER_API_KEY, you need an Open Weather API Key
 // You can get one for free at: https://home.openweathermap.org/api_keys (account needed).
-const WEATHER_API_KEY = "48dec02a3debcd81cf4c74f707fbf571";
+const WEATHER_API_KEY = "";
 const DEFAULT_LOCATION = {
     latitude: 0,
     longitude: 0,
@@ -14,8 +14,6 @@ const TAUTULLI_API_KEY = "";
 const HOME_ASSISTANT_API_BASE = "";
 const HOME_ASSISTANT_API_KEY = "";
 const UPCOMING_SAT_PASS_URL = "";
-
-/******/
 
 // import Cache from './lib/cache';
 // import Cache from './cache';
@@ -69,14 +67,14 @@ function createWidget(data) {
     locationLine.font = new Font("Menlo", 11);
 
     const homeLine = leftStack.addText(
-        `[🏠] ${"test" || data.home.mode}, ${12 || data.home.temperature}°, Lights ${
-            32|| data.home.lights ? "On" : "Off"
-        }`
+        `[🏠] ${"test" || data.home.mode}, ${
+            12 || data.home.temperature
+        }°, Lights ${32 || data.home.lights ? "On" : "Off"}`
     );
     homeLine.textColor = new Color("#ff9468");
     homeLine.font = new Font("Menlo", 11);
 
-    let plexText = `[🍿] Plex: ${ 12 || data.plex.streams} stream${
+    let plexText = `[🍿] Plex: ${12 || data.plex.streams} stream${
         true || data.plex.streams == 1 ? "" : "s"
     }`;
     // if (data.plex.streams > 0) {
@@ -86,7 +84,7 @@ function createWidget(data) {
     plexLine.textColor = new Color("#ffa7d3");
     plexLine.font = new Font("Menlo", 11);
 
-    const satLine = leftStack.addText(`[🛰] ${ "123" || data.satPass}`);
+    const satLine = leftStack.addText(`[🛰] ${"123" || data.satPass}`);
     satLine.textColor = new Color("#ffcc66");
     satLine.font = new Font("Menlo", 11);
 
